@@ -82,9 +82,9 @@
 			</tr>
 			<?php
 
-			if (isset($_POST['btnConsultar'])) {
-				require('../modelo/empleado.php');
-				$consulta = $_POST['fecha_Consulta'];
+			
+				require_once('../modelo/empleado.php');
+				
 				$modelo = new Empleado(NULL, NULL, NULL, NULL, NULL, NULL);
 				$datos = $modelo->listarEmpleado();
 				foreach ($datos as $listado) {
@@ -126,7 +126,7 @@
 					echo '<td><img src="../img/icons/eliminar.png"></img></td>';
 					echo '<tr>';
 				}
-			}
+			
 
 
 			?>
