@@ -41,9 +41,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="./frmActualizarMedicamentos.php">Medicamento</a></li>
-              <li class="nav-item"><a class="nav-link" href="./index.html">Calendario</a></li>
-              <li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Listado Medicamento</a></li>
+              <li class="nav-item"><a class="nav-link" href="./frmRegistroEmpleado.php">Crear empleado</a></li>
+              <li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Lista de empleados</a></li>
               <li class="nav-item active"><a class="nav-link" href="#">Contacto</a></li>
 
             </ul>
