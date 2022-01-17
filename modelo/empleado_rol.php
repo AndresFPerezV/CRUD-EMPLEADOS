@@ -38,7 +38,13 @@
 			if(isset($stmt))
 			{
 				echo "Registro almacenado";
-				exit();
+				?>
+			<script>
+				alert('Registro almacenado');
+				location.href="../views/frmRegistroEmpleado.php";
+			</script>
+			<?php
+				//exit();
 			}
 			else
 			{

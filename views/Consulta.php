@@ -6,47 +6,35 @@
 		
 	</head>
 	<body>
-    <h2>Listado de Medicamentos sin vencer</h2>
+    <h2>Lista de empleados</h2>
 	<br>
 	<table border="1">
 		<tr>
-		<td>ID</td>
-		<td>NOMBRE</td>
-		<td>NOMBRELAB</td>
-		<td>FECHA_VEN</td>
-		<td>CANTIDAD</td>
-		<td>FECHA CREACION</td>
+		<td><b>Nombre</b></td>
+		<td><b>Email</b></td>
+		<td><b>Sexo</b></td>
+		<td><b>Area</b></td>
+		<td><b>Boletin</b></td>
+		<td><b>Modificar</b></td>
+		<td><b>Eliminar</b></td>
 		</tr>
 		<?php 
-        require('../modelo/medicamento.php');
-        $fecha=$_REQUEST['fecha_Consulta'];
+        require('../modelo/empleado.php');
+        //$fecha=$_REQUEST['fecha_Consulta'];
         
         //echo $fecha;
 		//$fecha_Consulta = isset($_POST['fecha_Consulta']) ? $_POST['fecha_Consulta']: NULL;
 			
 
 				foreach($datos as $listado){
-
-					//if($listado['fecha_Vencimiento']>=$fecha_Consulta)
-					//{
 						echo '<tr>';
-						echo '<td>'.$listado['idReferencia'].'</td>';
-						echo '<td>'.$listado['nombreRef'].'</td>';
-						echo '<td>'.$listado['nombreLaboratorio'].'</td>';
-						echo '<td>'.$listado['fecha_Vencimiento'].'</td>';
-						echo '<td>'.$listado['cantidad'].'</td>';
-						echo '<td>'.$listado['fecha_Ingreso'].'</td>';
+						echo '<td>'.$listado['nombre'].'</td>';
+						echo '<td>'.$listado['email'].'</td>';
+						echo '<td>'.$listado['sexo'].'</td>';
+						echo '<td>'.$listado['area_id'].'</td>';
+						echo '<td>'.$listado['boletin'].'</td>';
+						echo '<td>'.$listado['descripcion'].'</td>';
 						echo '<tr>';	
-					//}
-				//echo '<tr>';
-				//echo '<td>'.$listado['idReferencia'].'</td>';
-				//echo '<td>'.$listado['nombreRef'].'</td>';
-				//echo '<td>'.$listado['nombreLaboratorio'].'</td>';
-				//echo '<td>'.$listado['fecha_Vencimiento'].'</td>';
-				//echo '<td>'.$listado['cantidad'].'</td>';
-				//echo '<td>'.$listado['fecha_Ingreso'].'</td>';
-				
-				//echo '<tr>';
 				}
 	
 		?>

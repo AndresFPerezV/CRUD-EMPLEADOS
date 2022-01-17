@@ -51,12 +51,12 @@
 			{
 				echo "Registro almacenado";
 				//exit();
-				?>
+				/*?>
 			<script>
 				alert('Registro almacenado');
 				location.href="../views/frmRegistroEmpleado.php";
 			</script>
-			<?php
+			<?php*/
 			}
 			else
 			{
@@ -65,7 +65,7 @@
 		}
 
 		public function buscarIdEmpleado($nombre){
-			$sql = "select * from empleado where nombre=$nombre";
+			$sql = "select * from empleado where nombre='$nombre'";
 			$query = $this->conexionDB->connect()->prepare($sql);
 			$query->execute();
 			$result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -74,51 +74,33 @@
 		
 		
 		public function buscarEmpleado($nombre){
-			$sql = "select * from empleado where nombre LIKE '%. $nombre .%'";
+			$sql = "select * from empleado where nombre LIKE '% $nombre %'";
 			$query = $this->conexionDB->connect()->prepare($sql);
 			$query->execute();
 			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 			return $result;
 		}
 
-		public function buscarMedicamento2($id,$fechaI){
-			$sql = "select * from tblmedicamento where idReferencia = $id";
-			$query = $this->conexionDB->connect()->prepare($sql);
-			$query->execute();
-			$result = $query->fetchAll(PDO::FETCH_ASSOC);
-			return $result;
-		}
+		
 
-		public function borrarMedicamento(){
-			$sql = "DELETE from tblmedicamento WHERE idReferencia = $this->idReferencia";
+		public function borrarEmpleado(){
+			$sql = "DELETE from empleado WHERE nombre = $this->nombre";
 			$query = $this->conexionDB->connect()->prepare($sql);
 			$query->execute();
 			return $query;
 		}
 		//WHERE ((idReferencia = $this->idReferencia) AND (fecha_Ingreso LIKE '%".$this->fecha_Ingreso."%'))";
 		//$sql = "SELECT * FROM facturacion WHERE OrdenCompra='".$_POST['ordencompra']."'AND CodBoc='".$_POST['codboc']."')";
-		public function actualizarMedicamento(){
+		public function actualizarEmpleado(){
 			try
 			{
-			$sql = "UPDATE tblmedicamento SET
-			nombreRef = ?,
-			nombreLaboratorio = ?,
-			fecha_Vencimiento = ?,
-			cantidad = ?
-			WHERE ((idReferencia=$this->idReferencia) AND (fecha_Ingreso LIKE '%".$this->fecha_Ingreso."%'))";
-			
+			$sql = "UPDATE empleado SET nombre = '$this->nombre', email='$this->email',sexo='$this->sexo',area_id='$this->area_id',boletin='$this->boletin',descripcion='$this->descripcion' where nombre='$this->nombre' ";
 			$query = $this->conexionDB->connect()->prepare($sql);
-			$query->execute(array(
-			$this->nombreRef,
-			$this->nombreLaboratorio,
-			$this->fecha_Vencimiento,
-			$this->cantidad
-			
-			));
+			$query->execute()
 			?>
 			<script>
 			alert('Registro actualizado');
-			location.href="../views/frmRegistroMedicamentos.php";
+			location.href="../views/frmRegistroEmpleado.php";
 			</script>
 			<?php
 			}
@@ -128,8 +110,8 @@
 			}
 		}
 
-		public function listarMedicamentos(){
-			$sql="select * from tblmedicamento";
+		public function listarEmpleado(){
+			$sql="select * from empleado";
 			//$sql="select * from tblmedicamento where fecha_Vencimiento<=date("Y-m-d")";
 			$query=$this->conexionDB->connect()->prepare($sql);
 			$query->execute();

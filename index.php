@@ -39,10 +39,8 @@ crossorigin="anonymous"></script>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="controller/ctrConsultasEmpleado.php?consulta1=listado1">Consultar Empleados</a></li>
               <li class="nav-item"><a class="nav-link" href="views/frmRegistroEmpleado.php">Crear empleados</a></li>
-              <li class="nav-item"><a class="nav-link" href="controller/ctrConsultasMedicamento.php?consulta1=listado1">Lista de empleados</a></li>
-              <li class="nav-item"><a class="nav-link" href="views/contacto.php">Contacto</a></li>
-
             </ul>
 
 
@@ -60,9 +58,7 @@ crossorigin="anonymous"></script>
         <ol class="breadcrumb">
           <li class="breadcrumb-item active "aria-current="page"><a href="#">Home</a></li>
           <li class="breadcrumb-item"><a href="views/frmRegistroEmpleado.php">Crear empleados</a></li>
-          <li class="breadcrumb-item"><a href="controller/ctrConsultasMedicamento.php?consulta1=listado1">Consulta</a></li>
-          <li class="breadcrumb-item"><a href="views/contacto.php">Contacto</li>
-          
+          <li class="breadcrumb-item"><a href="controller/ctrConsultasEmpleado.php?consulta1=listado1">Consulta</a></li>
         </ol>
       </nav>
 

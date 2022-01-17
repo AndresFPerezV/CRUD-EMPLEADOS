@@ -19,23 +19,22 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="./frmActualizarEmpleado.php">Actualizar Empleado</a></li>
-				<li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Listado Medicamento</a></li>
+				<li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Consultar empleados</a></li>
 				<li class="nav-item active"><a class="nav-link" href="#">Crear Empleado</a></li>
 
 			</ul>
 		</div>
 	</nav>
 	<div class="jumbotron">
-		<h1>Prueba Tecnica PHP</h1>
+		<h1>Prueba Técnica PHP</h1>
 	</div>
 	<div class="container">
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="./index.php">Home</a></li>
-				<li class="breadcrumb-item"><a href="./frmActualizarEmpleado.php">Modificar Empleados</a></li>
+				<li class="breadcrumb-item"><a href="../index.php">Home</a></li>
+				<li class="breadcrumb-item active"><a href="#">Crear Empleado</a></li>
 				<li class="breadcrumb-item"><a href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Consulta</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Contacto</li>
+				
 			</ol>
 		</nav>
 		<h2>Crear empleado</h2>
@@ -102,7 +101,7 @@
 
 			<div class="form-group">
 				<button class="btn btn-primary" type="submit" id="frmRegistrar" name="frmRegistrar" style="margin-left: 15.3%;">Guardar</button>
-				<button class="btn btn-success" type="submit" name="frmBuscar" onClick="mostrar()">Buscar</button>
+				<button class="btn btn-success" type="submit" name="frmBuscar">Buscar</button>
 				<button class="btn btn-warning" type="submit" name="frmActualizar" disabled="true">Actualizar</button>
 				<button class="btn btn-danger" type="submit" name="frmBorrar" disabled="true">Borrar</button>
 			</div>

@@ -25,8 +25,11 @@ $Codirector = isset($_POST['Cod']) ? $_POST['Cod'] : NULL;
 if (isset($_POST['frmRegistrar'])) {
 	$modelo = new Empleado($nombre, $email, $sexo, $area_id, $boletin, $descripcion);
 	$modelo->registrarEmpleado();
-	$idEmpleado = $modelo->buscarIdEmpleado($nombre);
-	echo $idEmpleado;
+	$registros = $modelo->buscarIdEmpleado($nombre);
+	foreach($registros as $listado){
+		$idEmpleado=$listado['id'];
+	}
+	echo $idEmpleado."hola mundo";
 	$rol = new Empleado_Rol();
 	if ($Desarrollador <> NULL) {
 		echo $Desarrollador;
@@ -67,12 +70,12 @@ if (isset($_POST['frmRegistrar'])) {
 		$datos = $modelo->buscarEmpleado($nombre);
 		foreach ($datos as $listado) {
 
-			$datos[0]['idReferencia'] = $listado['idReferencia'];
-			$datos[0]['nombreRef'] = $listado['nombreRef'];
-			$datos[0]['nombreLaboratorio'] = $listado['nombreLaboratorio'];
-			$datos[0]['fecha_Vencimiento'] = $listado['fecha_Vencimiento'];
-			$datos[0]['cantidad'] = $listado['cantidad'];
-			$datos[0]['fecha_Ingreso'] = $listado['fecha_Ingreso'];
+			$datos[0]['nombre'] = $listado['nombre'];
+			$datos[0]['email'] = $listado['email'];
+			$datos[0]['sexo'] = $listado['sexo'];
+			$datos[0]['area_id'] = $listado['area_id'];
+			$datos[0]['boletin'] = $listado['boletin'];
+			$datos[0]['descripcion'] = $listado['descripcion'];
 			require_once('../views/frmActualizarEmpleado.php');
 		}
 		//print_r($datos);
@@ -80,26 +83,21 @@ if (isset($_POST['frmRegistrar'])) {
 	}
 } else if (isset($_POST['frmActualizar'])) {
 
-	$modelo = new Empleado($idReferencia, $nombreRef, $nombreLaboratorio, $fecha_Vencimiento, $cantidad,Null);
-	$hoy = date("Y-m-d");
-	if ($hoy <= $fecha_Vencimiento) {
-		$modelo->actualizarMedicamento();
+	$modelo = new Empleado($nombre, $email, $sexo, $area_id, $boletin,$descripcion);
+	
+		$modelo->actualizarEmpleado();
 		echo "<script language='javascript'>";
 		echo "alert('Registro Actualizado')";
 		echo "</script>";
-	} else {
-		echo "<script language='javascript'>";
-		echo "alert('El medicamento no se puede actualizar ya que esta vencido')";
-		echo "</script>";
-	}
+	
 } else if (isset($_POST['frmBorrar'])) {
-	$modelo = new Empleado($idReferencia, NULL, NULL, NULL, NULL,Null);
-	$res = $modelo->borrarMedicamento();
+	$modelo = new Empleado($nombre, NULL, NULL, NULL, NULL,Null);
+	$res = $modelo->borrarEmpleado();
 	if ($res) {
 	?>
 		<script>
 			alert('Registro borrado');
-			location.href = "../views/frmRegistroMedicamentos.php";
+			location.href = "../views/frmRegistroEmpleado.php";
 		</script>
 <?php
 	}

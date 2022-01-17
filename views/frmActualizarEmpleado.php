@@ -30,14 +30,14 @@ if (count($datos) > 0) {
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
 					<li class="nav-item active"><a class="nav-link" href="#">Actualizar Empleado</a></li>
-					<li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Lista de empleados</a></li>
+					<li class="nav-item"><a class="nav-link" href="../controller/ctrConsultasMedicamento.php?consulta1=listado1">Consultar Empleados</a></li>
 					<li class="nav-item "><a class="nav-link" href="./frmRegistroEmpleado.php">Crear Empleado</a></li>
 
 				</ul>
 			</div>
 		</nav>
 		<div class="jumbotron">
-			<h1>Prueba Tecnica PHP</h1>
+			<h1>Prueba Técnica PHP</h1>
 		</div>
 		<div class="container">
 			<nav aria-label="breadcrumb">
@@ -114,7 +114,7 @@ if (count($datos) > 0) {
 				<div class="form-group">
 					<!--<button class="btn btn-primary" type="submit" id="frmRegistrar" name="frmRegistrar" style="margin-left: 15.3%;">Guardar</button>-->
 					<button class="btn btn-success" type="submit" name="frmBuscar">Buscar</button>
-					<button class="btn btn-warning" type="submit" name="frmActualizar" disabled="true">Actualizar</button>
+					<button class="btn btn-warning" type="submit" name="frmActualizar">Actualizar</button>
 					<button class="btn btn-danger" type="submit" name="frmBorrar" disabled="true">Borrar</button>
 				</div>
 			</form>
